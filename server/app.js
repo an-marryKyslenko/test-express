@@ -39,4 +39,4 @@ const start = async () => {
 
 start()
 
-module.exports = {app,start}
+module.exports = start
