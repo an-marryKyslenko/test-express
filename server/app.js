@@ -12,7 +12,7 @@ const connectDB = require('./bd/conect')
 const productsRouters = require('./routes/products')
 
 //middleware
-// app.use(express.static('./public'))
+app.use(express.static('./public'))
 app.use(express.json())
 
 //routes
