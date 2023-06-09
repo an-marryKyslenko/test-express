@@ -17,9 +17,9 @@ app.use(express.json())
 
 //routes
 
-app.get('/', (req, res) => {
-	res.send('<h1>Store API</h1><a href="/api/v1/products">products rout</a>')
-})
+// app.get('/', (req, res) => {
+// 	res.send('<h1>Store API</h1><a href="/api/v1/products">products rout</a>')
+// })
 app.use('/api/products', productsRouters)
 // products route
 app.use(notFound)
