@@ -3,7 +3,11 @@ const { getAllProducts, getAllProductsStatiic } = require('../controllers/produc
 
 const router = express.Router()
 
-router.get('/',getAllProducts)
+router.get('/', async(req,res)=>{
+	res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.json({ name: 'John Doe' })
+})
 // router.route('/static').get(getAllProductsStatiic)
 
 module.exports = router
