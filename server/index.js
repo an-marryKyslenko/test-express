@@ -9,7 +9,7 @@ const errorHandlerMiddleware = require('./middeleware/error-handler')
 const app = express()
 
 const connectDB = require('./bd/conect')
-const productsRouters = require('./routes/products')
+const productsRouters = require('./api/products')
 
 //middleware
 app.use(express.static('public'))
@@ -20,7 +20,7 @@ app.use(express.json())
 app.get('/', (req, res) => {
 	res.send('<h1>Store API</h1><a href="/api/v1/products">products rout</a>')
 })
-app.use('/api/v1/products', productsRouters)
+// app.use('/api/v1/products', productsRouters)
 // products route
 app.use(notFound)
 app.use(errorHandlerMiddleware)
