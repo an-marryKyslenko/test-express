@@ -20,7 +20,7 @@ app.use(express.json())
 app.get('/', (req, res) => {
 	res.send('<h1>Store API</h1><a href="/api/v1/products">products rout</a>')
 })
-// app.use('/api/v1/products', productsRouters)
+app.use('/api/products', productsRouters)
 // products route
 app.use(notFound)
 app.use(errorHandlerMiddleware)

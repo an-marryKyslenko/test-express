@@ -3,7 +3,7 @@ const { getAllProducts, getAllProductsStatiic } = require('../controllers/produc
 
 const router = express.Router()
 
-router.route('/').get(getAllProducts)
-router.route('/static').get(getAllProductsStatiic)
+router.get('/',getAllProducts)
+// router.route('/static').get(getAllProductsStatiic)
 
 module.exports = router
