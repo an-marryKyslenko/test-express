@@ -42,7 +42,7 @@ const server = http.createServer(app)
 
 // start()
 
-mongoose.connect(process.env.MONGO_URI).then(()=>{
+mongoose.connect('mongodb+srv://Anna-Mariia:1234@project1.ltuadeq.mongodb.net/PROJECT2?retryWrites=true&w=majority').then(()=>{
 	console.log("mongodb connected");
 	server.listen(port, () => {
 		console.log(`Server was lisening port ${port}...`)
