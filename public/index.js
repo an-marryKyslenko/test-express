@@ -17,7 +17,7 @@ const showProducts = async (param,value) => {
 	try {
 		obj[param] = value;
 		console.log(obj);
-		const res= await axios.get(`/api/v1/products`, {params: obj})
+		const res= await axios.get(`https://test-express-server-topaz.vercel.app/api/v1/products`, {params: obj})
 
 		const {data: {products}} = res;
 		if(products.length <1){
