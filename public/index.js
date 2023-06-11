@@ -19,7 +19,7 @@ const showProducts = async (param,value) => {
 		console.log(obj);
 		const res= await axios.get(`https://test-express-server-topaz.vercel.app/api/v1/products/`, {params: obj})
 
-		const {data: {products}} = res;
+		const {products} = res;
 		if(products.length <1){
 			productDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
 			return
