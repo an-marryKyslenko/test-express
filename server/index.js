@@ -10,6 +10,7 @@ const app = express()
 
 const connectDB = require('./bd/conect')
 const productsRouters = require('./api/products')
+const mongoose = require('mongoose')
 
 //middleware
 // app.use(express.static('public'))
@@ -29,16 +30,24 @@ const port = process.env.PORT || 3000
 
 const server = http.createServer(app)
 
-const start = async () => {
-	try {
-		//connect DB
-		await connectDB(process.env.MONGO_URI)
-		server.listen(port, console.log(`Server was lisening port ${port}...`))
-	} catch (error) {
-		console.log(error);
-	}
-}
+// const start = async () => {
+// 	try {
+// 		//connect DB
+// 		await connectDB(process.env.MONGO_URI)
+// 		server.listen(port, console.log(`Server was lisening port ${port}...`))
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// }
 
-start()
+// start()
 
+mongoose.connect(process.env.MONGO_URI).then(()=>{
+	console.log("mongodb connected");
+	server.listen(port, () => {
+		console.log(`Server was lisening port ${port}...`)
+	})
+}).catch((error) => {
+	console.log(error);
+})
 module.exports = { start, app }
