@@ -1,13 +1,13 @@
 const express = require('express')
-const { getAllProducts, getAllProductsStatiic } = require('../controllers/products')
+const { getAllProducts } = require('../controllers/products')
 
 const router = express.Router()
 
-router.get('/', async(req,res)=>{
-	res.statusCode = 200;
+router.get('/', async (req, res) => {
+  res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
   res.json({ name: 'John Doe' })
 })
-// router.route('/static').get(getAllProductsStatiic)
 
+router.route('/').get(getAllProducts)
 module.exports = router
