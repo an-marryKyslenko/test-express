@@ -50,4 +50,4 @@ mongoose.connect('mongodb+srv://Anna-Mariia:1234@project1.ltuadeq.mongodb.net/PR
 }).catch((error) => {
 	console.log(error);
 })
-module.exports = { start, app }
+module.exports =app
