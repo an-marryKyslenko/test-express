@@ -1,7 +1,7 @@
 require('dotenv').config()
 require('express-async-errors')
 
-
+const http = require('http')
 const express = require('express')
 const notFound = require('./middeleware/notFound')
 const errorHandlerMiddleware = require('./middeleware/error-handler')
@@ -27,11 +27,13 @@ app.use(errorHandlerMiddleware)
 
 const port = process.env.PORT || 3000
 
+const server = http.createServer(app)
+
 const start = async () => {
 	try {
 		//connect DB
 		await connectDB(process.env.MONGO_URI)
-		app.listen(port, console.log(`Server was lisening port ${port}...`))
+		server.listen(port, console.log(`Server was lisening port ${port}...`))
 	} catch (error) {
 		console.log(error);
 	}
